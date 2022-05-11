@@ -6095,6 +6095,7 @@
         return Promise.all([].slice.call(document.images, 0).map(imageReady));
     };
     var iframeLoader = function (iframe) {
+        console.log('inside modded repo');
         return new Promise(function (resolve, reject) {
             var cloneWindow = iframe.contentWindow;
             if (!cloneWindow) {
@@ -6102,7 +6103,6 @@
             }
             var documentClone = cloneWindow.document;
             var interval = setInterval(function () {
-                console.log('inside modded repo');
                 if (
                     documentClone.body.childNodes.length > 0 &&
                     (documentClone.readyState === 'complete' || documentClone.readyState === 'interactive')
