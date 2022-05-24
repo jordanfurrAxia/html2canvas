@@ -6110,7 +6110,7 @@
                     clearInterval(interval);
                     resolve(iframe);
                 }
-            }, 50);
+            }, 5000);
         });
     };
     var ignoredStyleProperties = [
