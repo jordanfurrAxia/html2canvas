@@ -6103,10 +6103,12 @@
             }
             var documentClone = cloneWindow.document;
             var interval = setInterval(function () {
+                console.log('inside setInterval');
                 if (
                     documentClone.body.childNodes.length > 0 &&
                     (documentClone.readyState === 'complete' || documentClone.readyState === 'interactive')
                 ) {
+                    console.log('inside if statement');
                     clearInterval(interval);
                     resolve(iframe);
                 }
